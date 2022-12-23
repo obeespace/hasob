@@ -4,18 +4,20 @@ import Bonds from "./Pages/Bonds"
 import Cart from "./Pages/Cart"
 import Home from "./Pages/Home"
 import Signup from "./Pages/Signup"
+import GuestRoute from "./routes/GuestRoute"
+import User from "./routes/UserRoute"
 
 function App() {
 
   return (
     <div className="App bg-green-50">
-      <Header/>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='signup' element={<Signup/>}/>
-        <Route path='cart' element={<Cart/>}/>
-        <Route path='bonds' element={<Bonds/>}/>
-      </Routes>
+      {localStorage === null ? 
+        <div>
+          <Routes><Route path="/*" element={<User/>}/></Routes>
+        </div> :
+        <div>
+          <Routes><Route path="/*" element={<GuestRoute/>}/></Routes>
+        </div>}
     </div>
   )
 }

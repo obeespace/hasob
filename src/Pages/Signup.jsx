@@ -49,7 +49,7 @@ const Signup = () => {
 
           <div className='flex justify-center gap-3'>
             <input id='terms' type='checkbox' className='accent-lime-800 scale-150'/>
-            <label htmlfor='terms' className='text-sm'>By continuing, You agree to the <a className='text-lime-800 cursor-pointer underline'>Terms and conditions</a></label>
+            <label htmlFor='terms' className='text-sm'>By continuing, You agree to the <a className='text-lime-800 cursor-pointer underline'>Terms and conditions</a></label>
           </div>
 
           <motion.button onClick={submit} whileTap={{scale:0.5}} className='w-full bg-black mt-10 hover:bg-lime-800 cursor-pointer text-white gap-2 rounded-md px-5 py-3 flex justify-center items-center'>Sign Up</motion.button>

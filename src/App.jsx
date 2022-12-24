@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App bg-green-50">
-      {localStorage === null ? 
+      {localStorage !== null ? 
         <div>
           <Routes><Route path="/*" element={<User/>}/></Routes>
         </div> :

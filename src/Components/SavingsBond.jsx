@@ -1,8 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FiHeart } from 'react-icons/fi'
+import { useSelector, useDispatch } from 'react-redux'
+import { decrement, increment, addItemToCart } from '../redux/CounterSlice'
 
 const SavingsBond = (props) => {
+    const count = useSelector((state) => state.counter.value)
+    const dispatch = useDispatch()
+  
     const data = [
         {
             id: 1,
@@ -37,12 +42,19 @@ const SavingsBond = (props) => {
     ]
 
     const Savebonds = (props) =>{
-       return ( 
-        <div className='flex justify-between mt-5 text-sm'>
-            <p>{props.name}</p>
-            <p className='text-black font-semibold'>{props.value}</p>
-        </div>)
+      return ( 
+      <div className='flex justify-between mt-5 text-sm'>
+          <p>{props.name}</p>
+          <p className='text-black font-semibold'>{props.value}</p>
+      </div>)
     }
+
+    const addToCart = (products) =>{
+      addItemToCart()
+      console.log('Added to cart', products)
+    }
+
+  
   return (
     <div className='text-gray-700 border mb-10 lg:mb-0 min-w-[300px] border-lime-500 rounded-xl px-6 py-3'>
       <div className='flex justify-between'>
@@ -60,9 +72,30 @@ const SavingsBond = (props) => {
       })}
 
       <div className='flex items-center mt-10 gap-5 justify-center'>
-        <div className='flex justify-center'><motion.button whileTap={{scale:0.5}} className='bg-lime-600 hover:bg-lime-800 cursor-pointer text-white gap-2 rounded-md px-9 py-3 flex justify-center'>Add to cart</motion.button></div>
+        <div className='flex justify-center'>
+          <motion.button onClick={() =>dispatch(addItemToCart(props))} 
+            whileTap={{scale:0.5}} 
+            className='bg-lime-600 hover:bg-lime-800 cursor-pointer text-white gap-2 
+            rounded-md px-9 py-3 flex justify-center'
+            >Add to cart
+          </motion.button>
+        </div>
         <FiHeart className='text-4xl'/>
       </div>
+
+      <button
+          aria-label="Increment value"
+          onClick={() => dispatch(increment())}
+        >
+          Increment
+        </button>
+        <span>{count}</span>
+        <button
+          aria-label="Decrement value"
+          onClick={() => dispatch(addItemToCart('updated cart'))}
+        >
+          Decrement
+      </button>
     </div>
   )
 }

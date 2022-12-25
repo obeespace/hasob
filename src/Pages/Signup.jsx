@@ -1,9 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
   const [firstName, setFirstName] = React.useState('')
-  
+  const navigate = useNavigate()
   function handleChange() {
     setFirstName(event.target.value)
   }
@@ -13,6 +14,7 @@ const Signup = () => {
     const saveData = firstName
     console.log(saveData)
     localStorage.setItem("firstName", saveData)
+    navigate('/')
   }
 
   console.log(firstName)

@@ -2,7 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { FiHeart } from 'react-icons/fi'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment, addItemToCart } from '../redux/CounterSlice'
+import mainLogo from '../assets/mainlogo.png'
+import { addItemToCart } from '../redux/CounterSlice'
 
 const SavingsBond = (props) => {
     const dispatch = useDispatch()
@@ -50,10 +51,10 @@ const SavingsBond = (props) => {
 
   
   return (
-    <div className='text-gray-700 border mb-10 lg:mb-0 min-w-[300px] border-lime-500 rounded-xl px-6 py-3'>
-      <div className='flex justify-between'>
-        <img />
-        <p className='px-2 py-1 bg-green-100 rounded-xl text-sm'>FGN Savings Bond</p>
+    <div className='text-gray-700 border pb-8 mb-10 lg:mb-0 min-w-[300px] border-lime-500 rounded-xl px-6 py-3'>
+      <div className='flex justify-between items-center'>
+        <img src={mainLogo} alt='coat of arm' className='h-10'/>
+        <p className='px-2 py-1 h-max bg-green-100 rounded-xl text-sm'>FGN Savings Bond</p>
       </div>
 
       <div className='mt-4 text-center'>

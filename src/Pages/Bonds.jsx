@@ -23,7 +23,7 @@ const Bonds = () => {
     ]
 
   return (
-    <div className='relative'>
+    <div className='relative pb-20'>
       <div className='w-5/6 mx-auto my-20 lg:flex gap-20 scrollbar-hide overflow-x-scroll'>
         {bondsData.map(n => {
            return <SavingsBond key={n.id} {...n}/>

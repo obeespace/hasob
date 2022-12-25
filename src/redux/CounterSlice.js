@@ -32,6 +32,6 @@ function cartReducer(state = initialState, action) {
 
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, addItemToCart } = counterSlice.actions
+export const { addItemToCart } = counterSlice.actions
 
 export default counterSlice.reducer

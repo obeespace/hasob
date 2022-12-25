@@ -11,14 +11,15 @@ function App() {
 
   return (
     <div className="App bg-green-50">
-      {localStorage !== null ? 
-        <div>
-          <Routes><Route path="/*" element={<User/>}/></Routes>
-        </div> :
+      {localStorage.length !== null ? 
         <div>
           <Routes><Route path="/*" element={<GuestRoute/>}/></Routes>
+        </div> :
+        <div>
+          <Routes><Route path="/*" element={<User/>}/></Routes>
         </div>}
     </div>
+    
   )
 }
 

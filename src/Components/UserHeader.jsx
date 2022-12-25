@@ -70,9 +70,9 @@ const Header = () => {
                 </div>
                 {toggleMenu && <div className='bg-green-50 z-50 text-gray-700 h-max w-40 absolute top-20 right-8 py-4 rounded-xl shadow-md'>
                     <div className='flex flex-col gap-3 items-center w-5/6 mx-auto text-lg font-semibold '>
-                        <Link to='bonds' className='hover:bg-green-500 hover:text-white w-full text-center rounded-md'><p className='px-3 py-2' onClick={()=> setToggleMenu(prev => !prev)}>Bond Offer</p></Link>
-                        <Link className='hover:bg-green-500 w-full hover:text-white text-center rounded-md'><p className=' hover:border-green-700 px-3 py-2' onClick={()=> setToggleMenu(prev => !prev)}>Portfolio</p></Link>
-                        <Link className='hover:bg-green-500 w-full hover:text-white text-center rounded-md'><p className='px-3 py-2' onClick={()=> setToggleMenu(prev => !prev)}>Notification</p></Link>
+                        <Link to='bonds' className='hover:bg-lime-500 hover:text-white w-full text-center rounded-md'><p className='px-3 py-2' onClick={()=> setToggleMenu(prev => !prev)}>Bond Offer</p></Link>
+                        <Link className='hover:bg-lime-500 w-full hover:text-white text-center rounded-md'><p className=' hover:border-green-700 px-3 py-2' onClick={()=> setToggleMenu(prev => !prev)}>Portfolio</p></Link>
+                        <Link className='hover:bg-lime-500 w-full hover:text-white text-center rounded-md'><p className='px-3 py-2' onClick={()=> setToggleMenu(prev => !prev)}>Notification</p></Link>
                     </div>
                 </div>}
             </div>

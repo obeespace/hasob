@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment, addItemToCart } from '../redux/CounterSlice'
 
 const SavingsBond = (props) => {
-    const count = useSelector((state) => state.counter.value)
     const dispatch = useDispatch()
   
     const data = [
@@ -49,11 +48,6 @@ const SavingsBond = (props) => {
       </div>)
     }
 
-    const addToCart = (products) =>{
-      addItemToCart()
-      console.log('Added to cart', products)
-    }
-
   
   return (
     <div className='text-gray-700 border mb-10 lg:mb-0 min-w-[300px] border-lime-500 rounded-xl px-6 py-3'>
@@ -82,20 +76,6 @@ const SavingsBond = (props) => {
         </div>
         <FiHeart className='text-4xl'/>
       </div>
-
-      <button
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
-          Increment
-        </button>
-        <span>{count}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={() => dispatch(addItemToCart('updated cart'))}
-        >
-          Decrement
-      </button>
     </div>
   )
 }

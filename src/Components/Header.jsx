@@ -34,7 +34,14 @@ const Header = () => {
                     <p className='hover:border-b cursor-pointer hover:border-green-700 pb-2'>Features</p>
                     <motion.p whileTap={{scale:0.7}} className='px-5 py-2 border border-lime-500 hover:bg-lime-500 rounded-md cursor-pointer'>Log In</motion.p>
                     {hideSignup && <Link to='signup' onClick={hideSignUpButton}><motion.p whileTap={{scale:0.7}} className='px-5 py-2 text-white rounded-md hover:bg-gray-700 bg-black'>Sign Up</motion.p></Link>}
-                    <Link to='cart'><motion.p whileTap={{scale:0.5}}><BsCart2 className='text-3xl'/></motion.p></Link>
+                    <div className='relative'>
+                        <Link to='cart'>
+                            <motion.p whileTap={{scale:0.5}}>
+                                <BsCart2 className='text-2xl'/>
+                            </motion.p>
+                        </Link>
+                        <div className='text-red-500 bg-red-500 rounded-full h-4 w-4 absolute flex items-center justify-center -top-1 -right-1'><p className='text-white'>{showCartItem.length}</p></div>
+                    </div>
                 </div>
             </div>
 
@@ -43,9 +50,20 @@ const Header = () => {
                 <div className=''>
                     <img src={logo} alt='' className='h-14' />
                 </div>
-                <div className='relative'>
-                    {toggleMenu ? <motion.p whileTap={{scale:0.7}}><IoMdClose className='text-3xl text-black cursor-pointer' onClick={()=> setToggleMenu(prev => !prev)}/></motion.p> : 
-                    <motion.p whileTap={{scale:0.7}}><GiHamburgerMenu className='text-xl cursor-pointer text-black' onClick={()=> setToggleMenu(prev => !prev)}/></motion.p>}  
+
+                <div className='flex items-center gap-4'>
+                    <div className='relative'>
+                        <Link to='cart'>
+                            <motion.p whileTap={{scale:0.5}}>
+                                <BsCart2 className='text-2xl'/>
+                            </motion.p>
+                        </Link>
+                        <div className='text-red-500 bg-red-500 rounded-full h-4 w-4 absolute flex items-center justify-center -top-1 -right-1'><p className='text-white text-sm'>{showCartItem.length}</p></div>
+                    </div>
+                    <div className='relative'>
+                        {toggleMenu ? <motion.p whileTap={{scale:0.7}}><IoMdClose className='text-3xl text-black cursor-pointer' onClick={()=> setToggleMenu(prev => !prev)}/></motion.p> : 
+                        <motion.p whileTap={{scale:0.7}}><GiHamburgerMenu className='text-xl cursor-pointer text-black' onClick={()=> setToggleMenu(prev => !prev)}/></motion.p>}  
+                    </div>
                 </div>
                 {toggleMenu && <div className='bg-green-50 text-gray-700 h-max w-40 absolute top-20 right-8 py-4 rounded-xl shadow-md'>
                     <div className='flex flex-col gap-3 items-center w-5/6 mx-auto text-lg font-semibold '>

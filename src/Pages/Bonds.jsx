@@ -1,6 +1,5 @@
 import React from 'react'
 import { BsChevronRight } from 'react-icons/bs'
-import { useSelector } from 'react-redux'
 import SavingsBond from '../Components/SavingsBond'
 
 const Bonds = () => {
@@ -22,10 +21,9 @@ const Bonds = () => {
             name: '630 days Savings Bond'
         }
     ]
-    const showCartItem = useSelector((state) => state.counter.cartItems)
+
   return (
     <div className='relative'>
-      {JSON.stringify(showCartItem)}
       <div className='w-5/6 mx-auto my-20 lg:flex gap-20 scrollbar-hide overflow-x-scroll'>
         {bondsData.map(n => {
            return <SavingsBond key={n.id} {...n}/>

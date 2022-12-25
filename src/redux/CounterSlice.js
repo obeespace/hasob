@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   value: 0,
   cartItems: [
-    {id: 4, name: '630 days Savings Bond'}
+    
   ]
 }
 

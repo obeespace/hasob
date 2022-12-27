@@ -52,7 +52,7 @@ const Header = () => {
             {/* Mobile Header */}
             <div className='flex lg:hidden items-center justify-between'>
                 <div className=''>
-                    <img src={logo} alt='' className='h-14' />
+                <Link to='/'><img src={logo} alt='' className='h-14' /></Link>
                 </div>
 
                 <div className='flex items-center gap-4'>

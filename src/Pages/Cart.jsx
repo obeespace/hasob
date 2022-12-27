@@ -16,7 +16,7 @@ const Cart = () => {
   })
   
   return (
-    <div className='h-screen'>
+    <div className=''>
       <div className='w-5/6 mx-auto py-20'>
         {hold}
         <div className='text-gray-700 flex justify-between items-center border border-green-600 mt-5 rounded-lg px-4 py-3'>

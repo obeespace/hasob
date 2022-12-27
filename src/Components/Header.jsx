@@ -62,7 +62,7 @@ const Header = () => {
                                 <BsCart2 className='text-2xl'/>
                             </motion.p>
                         </Link>
-                        {showCartItem.length > 0 && <div className='text-red-500 bg-red-500 rounded-full h-4 w-4 absolute flex items-center justify-center -top-1 -right-1'><p className='text-white text-sm'>{cart.length}</p></div>}
+                        {cart.length > 0 && <div className='text-red-500 bg-red-500 rounded-full h-4 w-4 absolute flex items-center justify-center -top-1 -right-1'><p className='text-white text-sm'>{cart.length}</p></div>}
                     </div>
                     <div className='relative'>
                         {toggleMenu ? <motion.p whileTap={{scale:0.7}}><IoMdClose className='text-3xl text-black cursor-pointer' onClick={()=> setToggleMenu(prev => !prev)}/></motion.p> : 

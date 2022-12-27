@@ -12,7 +12,7 @@ const CartInfo = (props) => {
         <img src={mainLogo} alt='coat of arm' className='h-16' />
         <p className='font-bold text-xl'>{props.name}</p>
       </div>
-      <div className='flex gap-2'>
+      <div className='flex gap-2 my-3 lg:mb-0'>
         <button className='px-2 py-1 border text-green-600 border-black rounded-md'>Automatic</button>
         <button className='px-2 py-1 text-red-600 rounded-md'>Delete</button>
       </div>

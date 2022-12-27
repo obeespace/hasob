@@ -13,25 +13,33 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     addItemToCart: (state, action) => {
-      state.cartItems.push(action.payload)
+      if (!state.cartItems.includes(action.payload)) {
+        // If it does not, add the item to the array
+        state.cartItems.push(action.payload);
+
+        // Save Cart items to local Strorage
+      
+      let cart = state.cartItems;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      }
     },
+
+    getCartItems: (state, action) => {
+      
+      let cart = JSON.parse(localStorage.getItem('cart'));
+      if(cart === null){
+        state.cartItems=[]
+      } else{
+        state.cartItems = cart;
+      }
+      
+    }
   },
 })
 
-function cartReducer(state = initialState, action) {
-  switch (action.type) {
-    case 'ADD_ITEM_TO_CART':
-      return {
-        ...state,
-        items: [...state.items, action.payload]
-      };
-    default:
-      return state;
-  }
-}
 
 
 // Action creators are generated for each case reducer function
-export const { addItemToCart } = counterSlice.actions
+export const { addItemToCart, getCartItems } = counterSlice.actions
 
 export default counterSlice.reducer

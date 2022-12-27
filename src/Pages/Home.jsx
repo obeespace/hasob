@@ -4,10 +4,13 @@ import {BsFillPlayCircleFill} from 'react-icons/bs'
 import { motion } from 'framer-motion'
 import landingPic from '../assets/Component 3.png'
 import bubble from '../assets/bubble.png'
+import commodityCard from '../assets/commodity card.jpg'
 
 const Home = () => {
   return (
-    <div className='w-5/6 mx-auto my-10 pb-96 lg:pb-40 lg:flex gap-20 text-gray-600'>
+    <div className='relative'>
+    <div className='h-6 w-14 bg-black'></div>
+    <div className='w-5/6 mx-auto my-10 pb-96 lg:pb-40 lg:flex gap-40 text-gray-600'>
       <div className='text-center lg:text-left'>
         <p className='text-6xl '>Subscribe to FGN Saving Bond</p>
         <p className='text-3xl mt-5'>Loan and get paid with interest</p>
@@ -17,9 +20,12 @@ const Home = () => {
         </div>
       </div>
       <div className='flex mt-20 lg-mt-0 relative lg:w-4/6 justify-center'>
-        <img src={bubble} alt='bubble' className='absolute lg:right-32 opacity-60'/>
-        <img src={landingPic} alt='landing page image' className='lg:scale-150 lg:h-max absolute lg:right-32'/>
+        <img src={bubble} alt='bubble' className='absolute lg:right-32 lg:-top-24 h-64 lg:h-96 md:h-80 opacity-60'/>
+        <img src={landingPic} alt='landing page image' className='lg:scale-150 lg:min-h-80 lg:h-max lg:-top-10 absolute lg:right-32'/>
+        <img src={commodityCard} alt='commodity card' className='absolute rounded-lg lg:h-14 h-8 md:h-10 md:top-32 md:right-44 top-20 right-24 lg:top-8 lg:right-40'/>
       </div>
+    </div>
+    <div className='h-6 w-14 bg-lime-500 absolute right-0 top-0'></div>
     </div>
   )
 }

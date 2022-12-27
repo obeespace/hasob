@@ -6,18 +6,17 @@ import { useSelector } from 'react-redux'
 
 const Cart = () => {
   const showCartItem = useSelector((state) => state.counter.cartItems)
-
   const CartItems = (props) => {
     return(
       <CartInfo name={props.name}/>
     )
   }
   const hold = showCartItem.map(n => {
-    return <CartItems key={n.id} {...n}/>
+    return <CartItems {...n}/>
   })
   
   return (
-    <div className=''>
+    <div className='h-screen'>
       <div className='w-5/6 mx-auto py-20'>
         {hold}
         <div className='text-gray-700 flex justify-between items-center border border-green-600 mt-5 rounded-lg px-4 py-3'>

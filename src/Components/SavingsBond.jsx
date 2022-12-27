@@ -51,7 +51,7 @@ const SavingsBond = (props) => {
 
   
   return (
-    <div className='text-gray-700 border pb-8 mb-10 lg:mb-0 min-w-[300px] border-lime-500 rounded-xl px-6 py-3'>
+    <div className='text-gray-700 border mb-10 lg:mb-0 min-w-[300px] border-lime-500 rounded-xl px-6 py-3'>
       <div className='flex justify-between items-center'>
         <img src={mainLogo} alt='coat of arm' className='h-10'/>
         <p className='px-2 py-1 h-max bg-green-100 rounded-xl text-sm'>FGN Savings Bond</p>
@@ -68,7 +68,7 @@ const SavingsBond = (props) => {
 
       <div className='flex items-center mt-10 gap-5 justify-center'>
         <div className='flex justify-center'>
-          <motion.button onClick={() =>dispatch(addItemToCart(props))} 
+          <motion.button onClick={() => dispatch(addItemToCart(props))} 
             whileTap={{scale:0.5}} 
             className='bg-lime-600 hover:bg-lime-800 cursor-pointer text-white gap-2 
             rounded-md px-9 py-3 flex justify-center'

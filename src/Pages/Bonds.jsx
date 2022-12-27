@@ -24,7 +24,7 @@ const Bonds = () => {
 
   return (
     <div className='relative pb-20'>
-      <div className='w-5/6 mx-auto my-20 lg:flex gap-20 scrollbar-hide overflow-x-scroll'>
+      <div className={`${localStorage.getItem('firstName') == null ? 'w-5/6' : 'w-11/12'} mx-auto my-20 ${localStorage.getItem('firstName') == null ? 'gap-20' : 'gap-2'} lg:flex scrollbar-hide overflow-x-scroll`}>
         {bondsData.map(n => {
            return <SavingsBond key={n.id} {...n}/>
         })}

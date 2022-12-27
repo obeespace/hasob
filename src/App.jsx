@@ -1,17 +1,21 @@
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import {Routes, Route} from "react-router-dom"
-import Header from "./Components/Header"
-import Bonds from "./Pages/Bonds"
-import Cart from "./Pages/Cart"
-import Home from "./Pages/Home"
-import Signup from "./Pages/Signup"
+import { getCartItems } from './redux/CounterSlice';
 import GuestRoute from "./routes/GuestRoute"
 import User from "./routes/UserRoute"
 
 function App() {
+  const dispatch = useDispatch()
 
+  function runGetCartItems(){
+    console.log
+    dispatch(getCartItems())
+  }
+  runGetCartItems()
   return (
     <div className="App bg-green-50">
-      {localStorage.length !== null ? 
+      {localStorage.getItem('firstName') == null ? 
         <div>
           <Routes><Route path="/*" element={<GuestRoute/>}/></Routes>
         </div> :

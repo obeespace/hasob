@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import logo from '../assets/LOGO.png'
 import {IoMdClose} from 'react-icons/io'
@@ -18,11 +18,8 @@ const Header = () => {
         setToggleMenu(true)
     }
 
-    const [hideSignup, setHideSignup] = React.useState(true)
-    function hideSignUpButton(){
-       return setHideSignup(false)
-       console.log(hideSignup)
-    }
+    const [makeBold, setMakeBold] = useState(false)
+
 
   return (
     <div className=''>
@@ -33,11 +30,11 @@ const Header = () => {
                     <Link to='/'><img src={logo} alt='' className='h-20' /></Link>
                 </div>
                 <div className='flex gap-10 text-lg'>
-                    <Link to='/bonds'><p className='hover:border-b hover:border-green-700 pb-2'>Bond Offer</p></Link>
-                    <p className='hover:border-b cursor-pointer hover:border-green-700 pb-2'>Portfolio</p>
-                    <p className='hover:border-b cursor-pointer hover:border-green-700 pb-2'>Notification</p>
+                    <Link to='/bonds'><p style={{fontWeight: makeBold ? "bold" : "normal"}} onClick={() => setMakeBold(true)} className='hover:border-b hover:border-green-700 pb-2'>Bond Offer</p></Link>
+                    <p onClick={() => setMakeBold(false)} className='hover:border-b cursor-pointer hover:border-green-700 pb-2'>Portfolio</p>
+                    <p onClick={() => setMakeBold(false)} className='hover:border-b cursor-pointer hover:border-green-700 pb-2'>Notification</p>
                     <motion.p whileTap={{scale:0.7}} className='cursor-pointer'><AiOutlineUser className='text-3xl'/></motion.p>
-                    <div className='relative'>
+                    <div onClick={() => setMakeBold(false)} className='relative'>
                         <Link to='cart'>
                             <motion.p whileTap={{scale:0.5}}>
                                 <BsCart2 className='text-2xl'/>
@@ -50,9 +47,9 @@ const Header = () => {
 
             {/* Mobile Header */}
             <div className='flex lg:hidden items-center justify-between'>
-                <div className=''>
+                <Link to = '/'><div className=''>
                     <img src={logo} alt='' className='h-14' />
-                </div>
+                </div></Link>
                 
                 <div className='flex items-center gap-4'>
                     <div className='relative'>
